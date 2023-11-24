@@ -1,4 +1,13 @@
 // server.js
+const express = require("express");
+const mongoose = require("mongoose");
+const {
+  CustomerModel,
+  AdminModel,
+  TransactionModel,
+  BillTypeModel,
+  ServiceProviderModel,
+} = require("./models/productModel");
 
 const app = express();
 
