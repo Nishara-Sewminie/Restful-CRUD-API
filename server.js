@@ -54,6 +54,19 @@ app.get("/cc", (req, res) => {
   res.send("Hello");
 });
 
+// Similar CRUD routes for other entities (Admin, Transaction, BillType, ServiceProvider) can be added here.
 
+mongoose
+  .connect(
+    "mongodb+srv://mania-99:1234@cluster0.3gclhdt.mongodb.net/Node-API?retryWrites=true&w=majority"
+  )
+  .then(() => {
+    console.log("connected to MongoDB");
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 
-
+app.listen(3001, () => {
+  console.log(`Node API app is running on port 3001`);
+});
