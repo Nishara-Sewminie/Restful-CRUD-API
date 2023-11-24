@@ -30,3 +30,13 @@ app.get("/customers", async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
+
+app.get("/customers/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const customer = await CustomerModel.findById(id);
+    res.status(200).json(customer);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
