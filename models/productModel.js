@@ -28,5 +28,22 @@ const transactionSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
-  
- 
+  customerID: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Customer",
+    required: true,
+  },
+  billTypeID: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    unique: true,
+  },
+  serviceProviderID: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    unique: true,
+  },
+  amount: { type: Number, required: true },
+  paymentStatus: { type: String, required: true },
+  date: { type: Date, default: Date.now },
+});
