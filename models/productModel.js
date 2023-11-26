@@ -47,3 +47,17 @@ const transactionSchema = new mongoose.Schema({
   paymentStatus: { type: String, required: true },
   date: { type: Date, default: Date.now },
 });
+const billTypeSchema = new mongoose.Schema({
+  billTypeID: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    unique: true,
+  },
+  name: { type: String, required: true },
+});
+const serviceProviderSchema = new mongoose.Schema({
+  serviceProviderID: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    unique: true,
+  },
