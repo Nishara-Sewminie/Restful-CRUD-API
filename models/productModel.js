@@ -61,3 +61,24 @@ const serviceProviderSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
+
+  billTypeID: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "BillType",
+    required: true,
+    },
+    adminID: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    unique: true,
+    },
+    name: { type: String, required: true },
+    });
+    const CustomerModel = mongoose.model("Customer", customerSchema);
+    const AdminModel = mongoose.model("Admin", adminSchema);
+    const TransactionModel = mongoose.model("Transaction", transactionSchema);
+    const BillTypeModel = mongoose.model("BillType", billTypeSchema);
+    const ServiceProviderModel = mongoose.model(
+    "ServiceProvider",
+    serviceProviderSchema
+    );
